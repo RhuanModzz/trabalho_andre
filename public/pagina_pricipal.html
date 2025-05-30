@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biologia 2º Ano</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #ffffff;
+    }
+
+    header {
+      background: #004466;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #fff;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ccffcc;
+      transition: color 0.3s;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      color: #00ff99;
+      background-color: #003344;
+    }
+
+    nav a.quiz-btn {
+      background-color: #00cc88;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: #222;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      box-shadow: 0 2px 8px rgba(0,255,180,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+      border-left: 5px solid #00cc88;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card h2 {
+      color: #66ffcc;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #003344;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="fade-in">
+    <h1>Biologia 2º Ano</h1>
+    <nav>
+      <a href="#celulas">Células</a>
+      <a href="#genetica">Genética</a>
+      <a href="#ecologia">Ecologia</a>
+      <a href="#citologia">Citologia</a>
+      <a href="#botanica">Botânica</a>
+      <a href="#fisiologia">Fisiologia Humana</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="quiz.html" class="quiz-btn">Quiz</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="celulas" class="card">
+      <h2>Células</h2>
+      <p>As células são as unidades básicas da vida...</p>
+    </section>
+
+    <section id="genetica" class="card">
+      <h2>Genética</h2>
+      <p>A genética estuda como os genes são transmitidos...</p>
+    </section>
+
+    <section id="ecologia" class="card">
+      <h2>Ecologia</h2>
+      <p>Ecologia é o estudo das relações entre os seres vivos...</p>
+    </section>
+
+    <section id="citologia" class="card">
+      <h2>Citologia</h2>
+      <p>Citologia é a parte da biologia que estuda a estrutura...</p>
+      <ul>
+        <li><strong>Membrana plasmática:</strong> controla a entrada e saída de substâncias.</li>
+        <li><strong>Citoplasma:</strong> onde ficam as organelas celulares.</li>
+        <li><strong>Mitocôndrias:</strong> produzem energia (ATP) pela respiração celular.</li>
+        <li><strong>Ribossomos:</strong> realizam a síntese de proteínas.</li>
+        <li><strong>Retículo endoplasmático:</strong> transporte de substâncias.</li>
+        <li><strong>Complexo de Golgi:</strong> empacota e secreta proteínas.</li>
+        <li><strong>Lisosomos:</strong> digestão intracelular.</li>
+        <li><strong>Núcleo:</strong> controla as funções celulares e guarda o DNA.</li>
+      </ul>
+      <p>As células podem ser animais ou vegetais...</p>
+    </section>
+
+    <section id="botanica" class="card">
+      <h2>Botânica</h2>
+      <p>Botânica é o ramo da biologia que estuda as plantas...</p>
+      <ul>
+        <li><strong>Briófitas:</strong> plantas simples...</li>
+        <li><strong>Pteridófitas:</strong> possuem vasos condutores...</li>
+        <li><strong>Gimnospermas:</strong> produzem sementes nuas...</li>
+        <li><strong>Angiospermas:</strong> produzem flores, frutos e sementes...</li>
+      </ul>
+      <p>Partes principais das plantas:</p>
+      <ul>
+        <li><strong>Raiz:</strong> fixa a planta e absorve água e sais minerais.</li>
+        <li><strong>Caule:</strong> sustenta e transporta seiva.</li>
+        <li><strong>Folhas:</strong> realizam fotossíntese.</li>
+        <li><strong>Flores:</strong> reprodução.</li>
+        <li><strong>Frutos e sementes:</strong> dispersão e proteção do embrião vegetal.</li>
+      </ul>
+    </section>
+
+    <section id="fisiologia" class="card">
+      <h2>Fisiologia Humana</h2>
+      <p>A fisiologia humana estuda o funcionamento do corpo humano...</p>
+      <ul>
+        <li><strong>Digestório:</strong> transforma alimentos em nutrientes...</li>
+        <li><strong>Respiratório:</strong> realiza trocas gasosas...</li>
+        <li><strong>Circulatório:</strong> transporta nutrientes, gases e hormônios...</li>
+        <li><strong>Excretor:</strong> elimina substâncias tóxicas...</li>
+        <li><strong>Endócrino:</strong> regula funções corporais por hormônios...</li>
+        <li><strong>Nervoso:</strong> coordena ações do corpo...</li>
+        <li><strong>Reprodutor:</strong> responsável pela reprodução...</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="fade-in">
+    <p>Site educacional - Biologia | Feito com ❤️</p>
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

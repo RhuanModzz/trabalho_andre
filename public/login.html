@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Login</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #003366;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        h2 {
+            text-align: center;
+            color: #00ff00;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #00cc66;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .link-cadastro {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .link-cadastro a {
+            color: #00ccff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <input type="submit" value="Entrar">
+        </form>
+        <div class="link-cadastro">
+            <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </div>
+        <div class="error" id="errorMsg"></div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMsg');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const storedUser = localStorage.getItem('usuario');
+            const storedPass = localStorage.getItem('senha');
+
+            if (username === storedUser && password === storedPass) {
+                window.location.href = 'pagina_principal.html';
+            } else {
+                errorMsg.textContent = 'Usuário ou senha incorretos!';
+            }
+        });
+    </script>
+</body>
+</html>

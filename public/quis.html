@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz de Biologia</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #000000;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+    }
+    .question {
+      background-color: #006666;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-left: 6px solid #00cc66;
+      border-radius: 5px;
+    }
+    .question p {
+      font-weight: bold;
+      color: #ffffff;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+      color: #ffffff;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    button {
+      background-color: #00cc66;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+    }
+    button:hover {
+      background-color: #00994d;
+    }
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      text-align: center;
+      color: #00ffcc;
+    }
+    .correta {
+      color: #00ff00; /* Verde */
+      font-weight: bold;
+    }
+    .incorreta {
+      color: #ff4444; /* Vermelho */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz de Biologia</h1>
+
+  <form id="quizForm">
+
+    <!-- Perguntas -->
+    <div class="question">
+      <p>1. Qual é a organela responsável pela produção de energia na célula?</p>
+      <label><input type="radio" name="q1" value="a"> Lisossomo</label>
+      <label><input type="radio" name="q1" value="b"> Mitocôndria</label>
+      <label><input type="radio" name="q1" value="c"> Ribossomo</label>
+    </div>
+
+    <div class="question">
+      <p>2. O que é um gene?</p>
+      <label><input type="radio" name="q2" value="a"> Uma célula reprodutiva</label>
+      <label><input type="radio" name="q2" value="b"> Um tipo de proteína</label>
+      <label><input type="radio" name="q2" value="c"> Um segmento de DNA que codifica uma proteína</label>
+    </div>
+
+    <div class="question">
+      <p>3. O que é uma cadeia alimentar?</p>
+      <label><input type="radio" name="q3" value="a"> O conjunto de células de um organismo</label>
+      <label><input type="radio" name="q3" value="b"> Uma sequência de organismos que se alimentam uns dos outros</label>
+      <label><input type="radio" name="q3" value="c"> Um tipo de ecossistema</label>
+    </div>
+
+    <div class="question">
+      <p>4. A membrana plasmática tem como função:</p>
+      <label><input type="radio" name="q4" value="a"> Controlar a entrada e saída de substâncias</label>
+      <label><input type="radio" name="q4" value="b"> Produzir energia</label>
+      <label><input type="radio" name="q4" value="c"> Armazenar DNA</label>
+    </div>
+
+    <div class="question">
+      <p>5. Qual é o processo pelo qual as plantas produzem seu próprio alimento?</p>
+      <label><input type="radio" name="q5" value="a"> Respiração</label>
+      <label><input type="radio" name="q5" value="b"> Digestão</label>
+      <label><input type="radio" name="q5" value="c"> Fotossíntese</label>
+    </div>
+
+    <div class="question">
+      <p>6. Qual é a função principal dos pulmões?</p>
+      <label><input type="radio" name="q6" value="a"> Bombear sangue</label>
+      <label><input type="radio" name="q6" value="b"> Realizar trocas gasosas</label>
+      <label><input type="radio" name="q6" value="c"> Produzir hormônios</label>
+    </div>
+
+    <!-- Novas Perguntas -->
+    <div class="question">
+      <p>7. Qual estrutura celular é responsável pela síntese de proteínas?</p>
+      <label><input type="radio" name="q7" value="a"> Ribossomo</label>
+      <label><input type="radio" name="q7" value="b"> Mitocôndria</label>
+      <label><input type="radio" name="q7" value="c"> Centríolo</label>
+    </div>
+
+    <div class="question">
+      <p>8. Qual hormônio regula os níveis de açúcar no sangue?</p>
+      <label><input type="radio" name="q8" value="a"> Adrenalina</label>
+      <label><input type="radio" name="q8" value="b"> Insulina</label>
+      <label><input type="radio" name="q8" value="c"> Testosterona</label>
+    </div>
+
+    <div class="question">
+      <p>9. O que é clorofila?</p>
+      <label><input type="radio" name="q9" value="a"> Um hormônio vegetal</label>
+      <label><input type="radio" name="q9" value="b"> Um tipo de célula</label>
+      <label><input type="radio" name="q9" value="c"> Um pigmento que capta luz para fotossíntese</label>
+    </div>
+
+    <div class="question">
+      <p>10. O que significa ecossistema?</p>
+      <label><input type="radio" name="q10" value="a"> Conjunto de animais de uma região</label>
+      <label><input type="radio" name="q10" value="b"> Relação entre seres vivos e o ambiente onde vivem</label>
+      <label><input type="radio" name="q10" value="c"> Uma floresta densa</label>
+    </div>
+
+    <button type="button" onclick="corrigirQuiz()">Ver Resultado</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    function corrigirQuiz() {
+      const respostasCorretas = {
+        q1: "b",
+        q2: "c",
+        q3: "b",
+        q4: "a",
+        q5: "c",
+        q6: "b",
+        q7: "a",
+        q8: "b",
+        q9: "c",
+        q10: "b"
+      };
+
+      let pontuacao = 0;
+      let total = Object.keys(respostasCorretas).length;
+      let resultadoHTML = "";
+
+      for (let q in respostasCorretas) {
+        const respostaSelecionada = document.querySelector(`input[name="${q}"]:checked`);
+        const divPergunta = document.querySelector(`input[name="${q}"]`).closest(".question");
+
+        // Remove feedback anterior (se houver)
+        const spansAntigos = divPergunta.querySelectorAll("span.feedback");
+        spansAntigos.forEach(span => span.remove());
+
+        if (respostaSelecionada) {
+          const correta = respostasCorretas[q];
+          const corretaLabel = document.querySelector(`input[name="${q}"][value="${correta}"]`).parentElement;
+
+          if (respostaSelecionada.value === correta) {
+            pontuacao++;
+            corretaLabel.insertAdjacentHTML("beforeend", ` <span class="feedback correta">(Correta)</span>`);
+          } else {
+            // Mostrar qual era a correta
+            const incorretaLabel = respostaSelecionada.parentElement;
+            incorretaLabel.insertAdjacentHTML("beforeend", ` <span class="feedback incorreta">(Errada)</span>`);
+            corretaLabel.insertAdjacentHTML("beforeend", ` <span class="feedback correta">(Correta)</span>`);
+          }
+        }
+      }
+
+      document.getElementById("resultado").innerHTML = `<h2>Você acertou ${pontuacao} de ${total} perguntas.</h2>`;
+    }
+  </script>
+
+</body>
+</html>

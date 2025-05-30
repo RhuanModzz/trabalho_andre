@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .cadastro-container {
+            background-color: #004080;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        h2 {
+            text-align: center;
+            color: #00ff00;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #00cc66;
+            color: black;
+            font-weight: bold;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .success {
+            color: lime;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .link-login {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .link-login a {
+            color: #00ccff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cadastro-container">
+        <h2>Cadastro</h2>
+        <form id="cadastroForm">
+            <input type="text" id="newUsername" placeholder="Novo Usuário" required>
+            <input type="password" id="newPassword" placeholder="Nova Senha" required>
+            <input type="submit" value="Cadastrar">
+        </form>
+        <div class="success" id="successMsg"></div>
+        <div class="link-login">
+            <p>Já tem conta? <a href="login.html">Faça login</a></p>
+        </div>
+    </div>
+
+    <script>
+        const cadastroForm = document.getElementById('cadastroForm');
+        const successMsg = document.getElementById('successMsg');
+
+        cadastroForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+
+            // Salva no localStorage
+            localStorage.setItem('usuario', newUsername);
+            localStorage.setItem('senha', newPassword);
+
+            successMsg.textContent = 'Cadastro realizado com sucesso!';
+        });
+    </script>
+</body>
+</html>
