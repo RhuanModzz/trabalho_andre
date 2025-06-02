@@ -42,7 +42,7 @@
       border-radius: 5px;
       cursor: pointer;
       display: block;
-      margin: 0 auto;
+      margin: 10px auto;
     }
     button:hover {
       background-color: #00994d;
@@ -112,7 +112,6 @@
       <label><input type="radio" name="q6" value="c"> Produzir hormônios</label>
     </div>
 
-    <!-- Novas Perguntas -->
     <div class="question">
       <p>7. Qual estrutura celular é responsável pela síntese de proteínas?</p>
       <label><input type="radio" name="q7" value="a"> Ribossomo</label>
@@ -142,6 +141,7 @@
     </div>
 
     <button type="button" onclick="corrigirQuiz()">Ver Resultado</button>
+    <button type="button" onclick="voltar()">Voltar</button>
   </form>
 
   <div id="resultado"></div>
@@ -163,7 +163,6 @@
 
       let pontuacao = 0;
       let total = Object.keys(respostasCorretas).length;
-      let resultadoHTML = "";
 
       for (let q in respostasCorretas) {
         const respostaSelecionada = document.querySelector(`input[name="${q}"]:checked`);
@@ -181,7 +180,6 @@
             pontuacao++;
             corretaLabel.insertAdjacentHTML("beforeend", ` <span class="feedback correta">(Correta)</span>`);
           } else {
-            // Mostrar qual era a correta
             const incorretaLabel = respostaSelecionada.parentElement;
             incorretaLabel.insertAdjacentHTML("beforeend", ` <span class="feedback incorreta">(Errada)</span>`);
             corretaLabel.insertAdjacentHTML("beforeend", ` <span class="feedback correta">(Correta)</span>`);
@@ -190,6 +188,10 @@
       }
 
       document.getElementById("resultado").innerHTML = `<h2>Você acertou ${pontuacao} de ${total} perguntas.</h2>`;
+    }
+
+    function voltar() {
+      window.history.back();
     }
   </script>
 
