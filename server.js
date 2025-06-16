@@ -14,14 +14,17 @@ app.get("/login", (req, res) => {
     res.sendFile(caminho.join(__dirname,"public","login.html"));
 });
 
-app.get("/biologia", (req, res) => {
-    res.sendFile(caminho.join(__dirname,"public","biologia.html"));
+app.get("/pagina_principal", (req, res) => {
+    res.sendFile(caminho.join(__dirname,"public","pagina_principal.html"));
 });
 
-app.get("/sobre_nos", (req, res) => {
-    res.sendFile(caminho.join(__dirname,"public","sobre_nos.html"));
+app.get("/sobre", (req, res) => {
+    res.sendFile(caminho.join(__dirname,"public","sobre.html"));
 });
 
+app.get("/quiz", (req, res) => {
+    res.sendFile(caminho.join(__dirname,"public","quiz.html"));
+});
 
 app.listen(porta, () => {
   console.log(`Servidor rodando em http://localhost:${porta}`);
